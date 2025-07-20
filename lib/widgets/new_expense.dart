@@ -49,7 +49,12 @@ class _NewExpenseState extends State<NewExpense> {
                 child: Text("Save"),
               ),
               SizedBox(width: 15),
-              ElevatedButton(onPressed: () {}, child: Text("Cancel")),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Cancel"),
+              ),
             ],
           ),
         ],
