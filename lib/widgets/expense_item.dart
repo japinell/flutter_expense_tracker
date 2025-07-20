@@ -22,9 +22,9 @@ class ExpenseItem extends StatelessWidget {
                 Spacer(), // Pushes the date to the right
                 Row(
                   children: [
-                    Icon(Icons.alarm),
+                    Icon(categoryIcons[expense.category]),
                     SizedBox(width: 8),
-                    Text(expense.date.toString()),
+                    Text(expense.formattedDate),
                   ],
                 ),
               ],
