@@ -40,7 +40,7 @@ Main screen. Manages the state of the application, including switching between s
 
 ### Remove Expense
 
-![Flutter expense tracker - Remove expense.](./assets/images/remove-expense.png)
+![Flutter expense tracker - Remove expense.](./assets/images/delete-expense.png)
 
 ## License
 
