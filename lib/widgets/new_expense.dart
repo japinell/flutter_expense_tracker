@@ -1,4 +1,7 @@
 import "package:flutter/material.dart";
+import "package:intl/intl.dart";
+
+final formatter = DateFormat("MM/dd/yyyy");
 
 class NewExpense extends StatefulWidget {
   const NewExpense({super.key});
@@ -12,12 +15,21 @@ class NewExpense extends StatefulWidget {
 class _NewExpenseState extends State<NewExpense> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
+  DateTime? _selectedDate;
 
-  void _datePicker() {
+  void _datePicker() async {
     final today = DateTime.now();
     final firstDate = DateTime(today.year - 1, today.month, today.day);
     final lastDate = DateTime(today.year, today.month, today.day);
-    showDatePicker(context: context, firstDate: firstDate, lastDate: lastDate);
+    final pickedDate = await showDatePicker(
+      context: context,
+      firstDate: firstDate,
+      lastDate: lastDate,
+    );
+
+    setState(() {
+      _selectedDate = pickedDate;
+    });
   }
 
   @override
@@ -56,7 +68,11 @@ class _NewExpenseState extends State<NewExpense> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("Selected Date"),
+                    Text(
+                      _selectedDate == null
+                          ? "Select a date..."
+                          : formatter.format(_selectedDate!),
+                    ),
                     IconButton(
                       onPressed: _datePicker,
                       icon: Icon(Icons.calendar_month),
