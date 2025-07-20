@@ -1,16 +1,57 @@
-# flutter_expense_tracker
+# Flutter Expense Tracker
 
-A new Flutter project.
+## Description
 
-## Getting Started
+This is my second application developed in **Flutter** and **Dart.**
 
-This project is a starting point for a Flutter application.
+This is a simple mobile application for expense tracking that deeps dive more on advanced concepts like interactivity with additional widgets for managing content and theming. The application also includes a custom widget for displaying a chart of expenses by categories.
 
-A few resources to get you started if this is your first Flutter project:
+## User Story
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+As a financially responsible software developer
+I want to track my expenses by categories
+So that I can plan and achieve my long-term financial goals
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Design
+
+```
+--\lib\models\expense.dart:
+
+Contains an object consisting of the predefined attributes that comprise an expense record; for simplicity, that is a title, amount, date, and category. The category is one of a predefined list (food, travel, leisure, work).
+```
+
+![Flutter expense tracker - Data design.](./assets/images/expense.png)
+
+```
+--\lib\widgets\expenses.dart:
+
+Main screen. Manages the state of the application, including switching between screens:
+```
+
+### Main Screen
+
+![Flutter expense tracker - Main screen.](./assets/images/expenses.png)
+
+### Add New Expense
+
+![Flutter expense tracker - Add New expense.](./assets/images/new-expense.png)
+
+### Remove Expense
+
+![Flutter expense tracker - Remove expense.](./assets/images/remove-expense.png)
+
+## License
+
+This project is licensed under The MIT License. Refer to https://opensource.org/licenses/MIT for more information of what you can and cannot do with this project. See contact information below if you have questions, comments, or suggestions for the project.
+
+## Contributing Guidelines
+
+Want to contribute to this project? You may clone or fork the project in GitHub. Note the licesing information referred in this file.
+
+## License
+
+This application is licensed under the following license:
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)(https://opensource.org/licenses/MIT)
