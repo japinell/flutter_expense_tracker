@@ -45,9 +45,30 @@ class _ExpensesState extends State<Expenses> {
   }
 
   void _removeExpense(Expense expense) {
+    final expenseIndex = expenses.indexOf(expense);
+
     setState(() {
       expenses.remove(expense);
     });
+
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: Duration(seconds: 3),
+        action: SnackBarAction(
+          label: "Undo...",
+          onPressed: () {
+            setState(() {
+              expenses.insert(
+                expenseIndex,
+                expense,
+              ); // Add the expense at the same position where it was added before
+            });
+          },
+        ),
+        content: Text("Expense deleted!"),
+      ),
+    );
   }
 
   @override
