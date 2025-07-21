@@ -31,6 +31,7 @@ class _ExpensesState extends State<Expenses> {
 
   void _openAddExpenseModal() {
     showModalBottomSheet(
+      useSafeArea: true,
       isScrollControlled: true, // Enable full screen mode
       context: context,
       builder: (ctx) {
